@@ -1,0 +1,74 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Products-Complevo",
+		"_postman_id": "0e7be975-e086-7ea2-c3af-569e63aefc6b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var response = pm.response.json();",
+							"var product_id = r;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:32033/api/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productCode\": 10,\r\n  \"name\": \"string\",\r\n  \"category\": \"string\",\r\n  \"price\":10\r\n}"
+				},
+				"description": "Route for insertion of a product"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"url": "http://localhost:32033/api/products/{{product_id}}",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Route for deleting a product"
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"url": "http://localhost:32033/api/products/{{product_id}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productCode\": 10,\r\n  \"name\": \"string\",\r\n  \"category\": \"string\",\r\n  \"price\":10\r\n}"
+				},
+				"description": "Route for updating a product"
+			},
+			"response": []
+		}
+	]
+}

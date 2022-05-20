@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  products.complevo.presentation:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development 
+    ports:
+      - "32033:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
